@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('dni')->unique();
             $table->foreignId('id_cargo')->constrained('cargo','id')->onDelete('cascade')->onUpdate('cascade');
             $table->double('sueldo');
-            $table->boolean('habilitado')->default(false);
+            $table->boolean('habilitado')->default(true);
             // $table->timestamps();
         });
     }
