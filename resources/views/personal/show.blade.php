@@ -7,15 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hola {{$p->nombre}}</h1>
+    <h1>hola {{$personal->nombre}}</h1>
     <br>
     <br>
-    <a href="../personal/{{$p->id}}/edit">Editar Personal</a>
+    <a href="../personal/{{$personal->id}}/edit">Editar Personal</a>
     <br>
     <br>
-    <form action="{{url('personal/'.$p->id)}}" method="POST">
+    <form action="{{url('personal/'.$personal->id)}}" method="POST">
         @csrf
-        @method('delete')
+        @method('DELETE')
         <h2><button>Eliminar Personal</button></h2>
     </form>
 </body>

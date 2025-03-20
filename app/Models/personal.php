@@ -14,9 +14,5 @@ class personal extends Model
     use HasFactory, Notifiable;
     protected $table = 'personal';
     public $timestamps = false;
-    protected $llenado_masivo = [
-        'nombre','app','apm',
-        'dni', 'id_cargo', 'sueldo',
-        'admin','habilitado'
-    ];
+    protected $guarded = ['status'];
 }

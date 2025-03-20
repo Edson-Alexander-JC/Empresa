@@ -8,26 +8,34 @@
 </head>
 <body>
     <h2>Crear Personal</h2>
-    <form action="../personal" method="POST">
+    @if ($errors->any())
+        <h4>ERRORES</h4>
+        <ul>
+            @foreach ($errors->all() as $e)
+                <li>{{ $e }}</li>
+            @endforeach
+        </ul>
+    @endif
+    <form action="{{url('personal')}}" method="POST">
         @csrf   
         <label for="nombre">Nombre</label>
         <br>
-        <input name="nombre" type="text">
+        <input name="nombre" type="text" value="{{old("nombre","")}}">
         <br>
         <br>
         <label for="app">Apellido Paterno</label>
         <br>
-        <input name="app" type="text">
+        <input name="app" type="text" value="{{old("apm","")}}">
         <br>
         <br>
         <label for="apm">Apellido Materno</label>
         <br>
-        <input name="apm" type="text">
+        <input name="apm" type="text" value="{{old("apm","")}}">
         <br>
         <br>
         <label for="dni">DNI</label>
         <br>
-        <input name="dni" type="text">
+        <input name="dni" type="text" value="{{old("dni","")}}">
         <br>
         <br>
         <label for="dni">Cargo</label>
@@ -40,7 +48,7 @@
         <br>
         <label for="sueldo">Sueldo</label>
         <br>
-        <input name="sueldo" type="number">
+        <input name="sueldo" type="number" value="{{old("sueldo","")}}">
         <br>
         <br>
         {{-- <input type="submit" value="Enviar"> --}}

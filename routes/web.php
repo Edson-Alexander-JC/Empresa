@@ -20,7 +20,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::post('personal',[PersonalController::class, 'store']);
 Route::resource('personal',PersonalController::class);
 // Route::resource('personal/{$id}',PersonalController::class);
 

@@ -8,27 +8,36 @@
 </head>
 <body>
     <h2>Crear Personal</h2>
-    <form action="{{ url('personal/'.$p->id) }}" method="POST">
+    @if ($errors->any())
+        <h4>ERRORES</h4>
+        <ul>
+            @foreach ($errors->all() as $e)
+                <li>{{ $e }}</li>
+            @endforeach
+        </ul>
+    @endif
+
+    <form action="{{ url('personal/'.$personal->id) }}" method="POST">
         @csrf   
         @method('PUT')
         <label for="nombre">Nombre</label>
         <br>
-        <input name="nombre" type="text" value="{{$p->nombre}}">
+        <input name="nombre" type="text" value="{{old('nombre',$personal->nombre)}}">
         <br>
         <br>
         <label for="app">Apellido Paterno</label>
         <br>
-        <input name="app" type="text" value="{{$p->app}}">
+        <input name="app" type="text" value="{{old('app',$personal->app)}}">
         <br>
         <br>
         <label for="apm">Apellido Materno</label>
         <br>
-        <input name="apm" type="text" value="{{$p->apm}}">
+        <input name="apm" type="text" value="{{old('apm',$personal->apm)}}">
         <br>
         <br>
         <label for="dni">DNI</label>
         <br>
-        <input name="dni" type="text" value="{{$p->dni}}">
+        <input name="dni" type="text" value="{{old('dni',$personal->dni)}}">
         <br>
         <br>
         <label for="dni">Cargo</label>
@@ -41,7 +50,7 @@
         <br>
         <label for="sueldo">Sueldo</label>
         <br>
-        <input name="sueldo" type="number" value="{{$p->sueldo}}">
+        <input name="sueldo" type="number" value="{{old('sueldo',$personal->sueldo)}}">
         <br>
         <br>
         {{-- <input type="submit" value="Enviar"> --}}
