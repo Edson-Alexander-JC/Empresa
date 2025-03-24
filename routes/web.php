@@ -20,8 +20,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::resource('personal',PersonalController::class);
-// Route::resource('personal/{$id}',PersonalController::class);
+Route::resource('esclavos',PersonalController::class)->parameters(['esclavos'=>'personal'])->names('personal');
 
 
 require __DIR__.'/auth.php';

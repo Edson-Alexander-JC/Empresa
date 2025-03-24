@@ -17,7 +17,7 @@
         </ul>
     @endif
 
-    <form action="{{ url('personal/'.$personal->id) }}" method="POST">
+    <form action="{{ route('personal.update',$personal->id) }}" method="POST">
         @csrf   
         @method('PUT')
         <label for="nombre">Nombre</label>

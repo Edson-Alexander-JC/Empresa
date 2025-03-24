@@ -39,6 +39,6 @@ class PersonalController extends Controller
     }
     public function destroy(personal $personal){
         $personal->delete();
-        return Redirect(url('personal'));
+        return Redirect()->route('personal.index');
     }
 }

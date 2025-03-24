@@ -16,7 +16,7 @@
             @endforeach
         </ul>
     @endif
-    <form action="{{url('personal')}}" method="POST">
+    <form action="{{route('personal.store')}}" method="POST">
         @csrf   
         <label for="nombre">Nombre</label>
         <br>
