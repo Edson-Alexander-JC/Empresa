@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\personal>
  */
@@ -17,9 +18,10 @@ class personalFactory extends Factory
      */
     public function definition(): array
     {
-        
+        $name = fake()->name();
         return [
-            'nombre' => fake()->name(),
+            'nombre' =>  $name,
+            'slug' => Str::slug($name, '-'),
             'app' => fake()->lastName(),
             'apm' => fake()->lastName(),
             'dni' => fake()->randomNumber(8, true),

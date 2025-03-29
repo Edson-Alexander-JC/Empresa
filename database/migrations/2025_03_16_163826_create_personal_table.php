@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('personal', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table->string('app');
             $table->string('apm');
             $table->integer('dni')->unique();

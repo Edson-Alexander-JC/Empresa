@@ -19,6 +19,8 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
+Route::view('acercade','acercade')->name('acercade');
+Route::view('contactenos','contactenos')->name('contactenos');;
 
 Route::resource('esclavos',PersonalController::class)->parameters(['esclavos'=>'personal'])->names('personal');
 

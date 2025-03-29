@@ -15,4 +15,9 @@ class personal extends Model
     protected $table = 'personal';
     public $timestamps = false;
     protected $guarded = ['status'];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

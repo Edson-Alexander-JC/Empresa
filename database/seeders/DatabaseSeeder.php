@@ -24,15 +24,6 @@ class DatabaseSeeder extends Seeder
         cargo::factory()->create([
             'nombre_cargo' => 'prueba',
         ]);
-        personal::factory()->create([
-            'nombre' => 'prueba',
-            'app' => 'a',
-            'apm' => 'a',
-            'dni' => 900,
-            'id_cargo' => 1,
-            'sueldo' => '0.0',
-            'habilitado' => false
-        ]);
         personal::factory()->count(10)->create();
     }
 }

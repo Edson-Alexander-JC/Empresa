@@ -29,7 +29,7 @@ class PersonalController extends Controller
         return Redirect()->route('personal.show',$personal);
     }
 
-    /*MUESTRA LOS DATOS DE UN ELEMENTO EN LA BDD*/
+/*MUESTRA LOS DATOS DE UN ELEMENTO EN LA BDD*/
     public function show(personal $personal){
         return view('personal.show', compact('personal'));
     }

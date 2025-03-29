@@ -12,7 +12,7 @@
     <h3><a href="{{ route('personal.create') }}">Crear nuevo personal</a></h6>
     <ul>
         @foreach ($personal as $p)
-            <li><a href="{{ route('personal.show',$p->id)}}">{{$p->id}} || {{$p->nombre}}</a></li>
+            <li><a href="{{ route('personal.show',$p)}}">{{$p->id}} || {{$p->nombre}}</a></li>
         @endforeach
     </ul>
     {{ $personal->links() }}
